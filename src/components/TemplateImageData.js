@@ -41,8 +41,7 @@ const TemplateImageData = ({ formData }) => {
           fontSize: 44,
           fontWeight: "bold",
           fontFamily: "leagueSpartan",
-          marginTop: 4,
-          marginBottom: 4,
+          marginTop: 3,
         }}
       >
         ASCII
@@ -62,7 +61,7 @@ const TemplateImageData = ({ formData }) => {
           fontSize: 40,
           fontWeight: "bold",
           fontFamily: "Lanzord",
-          marginBottom: 4,
+          marginBottom: 3,
         }}
       >
         ALUMNI TECH TALK SERIES
@@ -106,12 +105,15 @@ const TemplateImageData = ({ formData }) => {
       <div
         style={{
           marginBottom: 20,
-          fontSize: 20,
+          paddingBottom: 10,
+          fontSize: 16,
           fontFamily: "Lanzord",
           marginTop: 30,
           display: "flex",
           flexDirection: "column",
+          fontWeight: "bold",
           gap: 6,
+          textTransform: "uppercase",
         }}
       >
         <div>

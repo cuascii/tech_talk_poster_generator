@@ -58,6 +58,8 @@ const TemplateContents = styled.div`
 const LogosHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4;
 `;
 
 const ASCIIImage = styled.img`
@@ -67,9 +69,11 @@ const ASCIIImage = styled.img`
 `;
 
 const CHRISTImage = styled.img`
-  width: 200px;
-  height: 100px;
+  max-width: 275px;
+  max-height: 250px;
   object-fit: contain;
+  margin-left: auto;
+  margin-right: -10px;
 `;
 
 const DownloadButton = styled.button`
