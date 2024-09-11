@@ -1,0 +1,178 @@
+.mainpage {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #00796b;
+
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainpage-main {
+    padding: 20px;
+    flex: 1; /* Ensure it takes up available space */
+}
+
+.mainpage-header {
+    background-color: #ffffff; /* White background color */
+    padding: 10px;
+    border-bottom: 2px solid #b2ebf2; /* Light blue border */
+    position: relative; /* Ensure positioning for the child images */
+}
+
+.features {
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.features h2 {
+    padding: 5px;
+    color: #00796b; /* Darker blue-green for the section title */
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px auto; /* Space between feature cards and center alignment */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /* Adjust width as needed */
+}
+
+.feature-card:hover {
+    background-color: #bfe4da; /* Darker shade for button hover */
+}
+
+.feature-card h3 {
+    margin: 0;
+    color: #00796b; /* Darker blue-green for feature titles */
+}
+
+.feature-card p {
+    color: #004d40; /* Darker shade for feature descriptions */
+}
+
+.cta {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add space at the bottom */
+}
+
+.cta h2 {
+    color: #00796b; /* Darker blue-green for the call-to-action section */
+}
+
+.cta button {
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+}
+
+.cta button:hover {
+    transform: scale(1.1); /* Enlarge the button by 10% */
+    background-color: #004d40; /* Optionally change background color on hover */
+}
+
+.templates {
+    margin-top: 40px;
+}
+
+.templates h2 {
+    color: #00796b; /* Darker blue-green for template section title */
+}
+
+/* Default button styling */
+.template-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00796b;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0px 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+}
+
+/* Hover effect */
+.template-button:hover {
+    transform: scale(1.1); /* Enlarge the button by 10% */
+    background-color: #004d40; /* Optionally change background color on hover */
+}
+
+.textbox-section {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px; /* Adjust based on your design */
+}
+
+.textbox-section h3 {
+    color: #00796b; /* Darker blue-green for headings */
+    margin-bottom: 10px;
+}
+
+.event-name-section {
+    background-color: #ffffff; /* White background color */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.textbox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b2ebf2; /* Light blue border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding does not affect the total width */
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: transparent; /* Make the background transparent */
+}
+
+.textbox::placeholder {
+    color: #aaa; /* Placeholder color */
+}
+
+.mainpage-footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #b2ebf2; /* Light blue border */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative; /* Ensure body is positioned relatively for pseudo-element */
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://clicktranscripts.com/new/wp-content/uploads/2022/05/christ-uni.png');
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35; /* Adjust opacity for translucency */
+    z-index: -1; /* Ensure the pseudo-element is behind content */
+}
