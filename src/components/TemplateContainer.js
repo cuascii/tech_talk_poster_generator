@@ -35,7 +35,7 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #343532;
   color: white;
   padding-top: 10px;
   padding-bottom: 20px;
