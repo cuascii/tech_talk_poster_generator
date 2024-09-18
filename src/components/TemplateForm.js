@@ -22,57 +22,60 @@ const TemplateForm = ({
     <Container>
       <FormContainer>
         <Header>Enter the details required to generate the image</Header>
-        {data.map((d, i) => (
-          <InputForm key={i}>
-            <InputLabel>{d.title}</InputLabel>
-            {d.tag === "image" ? (
-              <Input
-                type={d.type}
-                accept=".png, .jpeg, .jpg"
-                onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    setImage(URL.createObjectURL(e.target.files[0]));
+        <InputForm>
+          {data.map((d, i) => (
+            <InputFormDiv key={i}>
+              <InputLabel>{d.title}</InputLabel>
+              {d.tag === "image" ? (
+                <Input
+                  type={d.type}
+                  accept=".png, .jpeg, .jpg"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      setImage(URL.createObjectURL(e.target.files[0]));
+                    }
+                  }}
+                />
+              ) : (
+                <Input
+                  type={d.type}
+                  placeholder={d.placeholder}
+                  value={
+                    d.tag === "topic"
+                      ? formData.topic
+                      : d.tag === "name"
+                      ? formData.name
+                      : d.tag === "position"
+                      ? formData.position
+                      : d.tag === "institute"
+                      ? formData.institute
+                      : d.tag === "location"
+                      ? formData.location
+                      : d.tag === "venue"
+                      ? formData.venue
+                      : formData.dateTime
                   }
-                }}
-              />
-            ) : (
-              <Input
-                type={d.type}
-                value={
-                  d.tag === "topic"
-                    ? formData.topic
-                    : d.tag === "name"
-                    ? formData.name
-                    : d.tag === "position"
-                    ? formData.position
-                    : d.tag === "institute"
-                    ? formData.institute
-                    : d.tag === "location"
-                    ? formData.location
-                    : d.tag === "venue"
-                    ? formData.venue
-                    : formData.dateTime
-                }
-                onChange={(e) => {
-                  d.tag === "topic"
-                    ? setTopic(e.target.value)
-                    : d.tag === "name"
-                    ? setName(e.target.value)
-                    : d.tag === "position"
-                    ? setPosition(e.target.value)
-                    : d.tag === "institute"
-                    ? setInstitute(e.target.value)
-                    : d.tag === "location"
-                    ? setLocation(e.target.value)
-                    : d.tag === "venue"
-                    ? setVenue(e.target.value)
-                    : setDateTime(e.target.value);
-                }}
-              />
-            )}
-          </InputForm>
-        ))}
-        <InputButton onClick={onSubmit}>Submit</InputButton>
+                  onChange={(e) => {
+                    d.tag === "topic"
+                      ? setTopic(e.target.value)
+                      : d.tag === "name"
+                      ? setName(e.target.value)
+                      : d.tag === "position"
+                      ? setPosition(e.target.value)
+                      : d.tag === "institute"
+                      ? setInstitute(e.target.value)
+                      : d.tag === "location"
+                      ? setLocation(e.target.value)
+                      : d.tag === "venue"
+                      ? setVenue(e.target.value)
+                      : setDateTime(e.target.value);
+                  }}
+                />
+              )}
+            </InputFormDiv>
+          ))}
+          <InputButton onClick={onSubmit}>Submit</InputButton>
+        </InputForm>
       </FormContainer>
     </Container>
   );
@@ -81,70 +84,67 @@ const TemplateForm = ({
 export default TemplateForm;
 
 const Container = styled.div`
-  height: max-content;
-  max-width: 100vw;
+  font-family: Arial, sans-serif;
+  background-color: #343532;
+  color: rgb(29, 22, 22);
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 `;
 
 const FormContainer = styled.div`
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #616161;
-  gap: 4px;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
+  background-color: #444;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+`;
+
+const Header = styled.div`
+  margin-bottom: 22px;
+  color: white;
 `;
 
 const InputForm = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding: 10px;
+`;
+
+const InputFormDiv = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 `;
 
 const InputLabel = styled.label`
-  font-size: large;
-  font-weight: bold;
-  padding: 5px;
+  text-align: left;
+  margin-bottom: 5px;
+  color: white;
 `;
 
 const Input = styled.input`
-  outline: none;
-  padding: 5px;
-  border-radius: 10px;
-  border-color: transparent;
-`;
-
-const Header = styled.div`
-  font-size: xx-large;
-  font-weight: bold;
   padding: 10px;
-  word-wrap: break-word;
+  border: none;
+  border-radius: 10px;
+  background-color: #555;
+  color: white;
+  flex-grow: 1;
+  margin-left: 4px;
+  outline: none;
+  color: white;
 `;
 
 const InputButton = styled.button`
   padding: 10px;
-  border-radius: 10px;
-  border-color: transparent;
-  background-color: #f50057;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
   color: white;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: fit-content;
-  font-weight: bold;
   cursor: pointer;
   &:hover {
-    background-color: #ff4081;
-  }
-  &:active {
-    background-color: #c51162;
+    background-color: #323b34;
   }
 `;
